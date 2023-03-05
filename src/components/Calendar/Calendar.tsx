@@ -1,3 +1,4 @@
+import { Tooltip } from "../Tooltip/Tooltip";
 import { Day, DayData } from "./Day/Day";
 
 export const Calendar = ({
@@ -14,7 +15,18 @@ export const Calendar = ({
           <div className="flex gap-1 flex-col" key={week[0].date.getTime()}>
             {week.length &&
               week.map((dayData: DayData) => (
-                <Day key={dayData.date.getTime()} data={dayData} size={size} />
+                <Tooltip
+                  content={`${
+                    dayData.count
+                  } commits on ${dayData.date.toDateString()}`}
+                  direction="bottom"
+                >
+                  <Day
+                    key={dayData.date.getTime()}
+                    data={dayData}
+                    size={size}
+                  />
+                </Tooltip>
               ))}
           </div>
         ))}
