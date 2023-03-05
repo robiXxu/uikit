@@ -12,7 +12,7 @@ export const Day = ({
   count?: number;
 }) => {
   let colorIndex = data ? Math.ceil(data.count / 5) : 0;
-  if (colorIndex > 8) { colorIndex = 8 }
+  if (colorIndex > 7) { colorIndex = 7 }
   const classes = [
     'bg-gray-200',
     'bg-sky-300',
