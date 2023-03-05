@@ -1,13 +1,8 @@
 import { Tooltip } from "../Tooltip/Tooltip";
-import { Day, DayData } from "./Day/Day";
+import { Day } from "./Day/Day";
+import { CalendarData, DayData } from "./interfaces";
 
-export const Calendar = ({
-  data,
-  size = 12,
-}: {
-  data: DayData[][];
-  size: number;
-}) => {
+export const Calendar = ({ data, size = 12 }: CalendarData) => {
   return (
     <div className="flex gap-1">
       {data.length &&
