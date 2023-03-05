@@ -13,11 +13,22 @@ export const Day = ({
 }) => {
   let colorIndex = data ? Math.ceil(data.count / 4) : 0;
   if (colorIndex > 9) { colorIndex = 9 }
-  const color = colorIndex ? `bg-red-${colorIndex}00` : 'bg-gray-200';
+  const classes = [
+    'bg-gray-200',
+    'bg-sky-100',
+    'bg-sky-200',
+    'bg-sky-300',
+    'bg-sky-400',
+    'bg-sky-500',
+    'bg-sky-600',
+    'bg-sky-700',
+    'bg-sky-800',
+    'bg-sky-900',
+  ];
   return (
     <div
       style={{ width: size, height: size }}
-      className={`rounded bg-gray-200 ${color}`}
+      className={`rounded ${classes[colorIndex]}`}
       title={`${data?.date.toDateString()} ${data?.count}`}
     ></div>
   );
