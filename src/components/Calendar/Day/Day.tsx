@@ -11,12 +11,10 @@ export const Day = ({
   data?: DayData;
   count?: number;
 }) => {
-  let colorIndex = data ? Math.ceil(data.count / 4) : 0;
-  if (colorIndex > 9) { colorIndex = 9 }
+  let colorIndex = data ? Math.ceil(data.count / 5) : 0;
+  if (colorIndex > 8) { colorIndex = 8 }
   const classes = [
     'bg-gray-200',
-    'bg-sky-100',
-    'bg-sky-200',
     'bg-sky-300',
     'bg-sky-400',
     'bg-sky-500',
